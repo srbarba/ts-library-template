@@ -11,26 +11,22 @@ const production = process.env.NODE_ENV === 'production'
 export default [
   {
     input: 'src/index.ts',
-    output: 
-      {
-        file: pkg['umd:main'],
-        format: 'umd',
-        sourcemap: !production,
-      }
-    ,
+    output: {
+      file: pkg['umd:main'],
+      format: 'umd',
+      sourcemap: !production,
+    },
     plugins: [
       alias({
         entries: [
           { find: '@/', replacement: './src/' },
-          { find: '@@/', replacement: './' }
-        ]
+          { find: '@@/', replacement: './' },
+        ],
       }),
       resolve(),
       commonjs(),
       typescript(),
-      babel(
-        { babelHelpers: 'bundled', exclude: 'node_modules/**', }
-      ),
+      babel({ babelHelpers: 'bundled', exclude: 'node_modules/**' }),
     ],
   },
   {
@@ -45,23 +41,19 @@ export default [
         file: pkg.main,
         format: 'cjs',
         sourcemap: !production,
-        plugins: [
-          production ? terser() : false
-        ]
-      }
+        plugins: [production ? terser() : false],
+      },
     ],
     external: ['axios'],
     plugins: [
       alias({
         entries: [
           { find: '@/', replacement: './src/' },
-          { find: '@@/', replacement: './' }
-        ]
+          { find: '@@/', replacement: './' },
+        ],
       }),
       typescript(),
-      babel(
-        { babelHelpers: 'bundled', exclude: 'node_modules/**', }
-      ),
+      babel({ babelHelpers: 'bundled', exclude: 'node_modules/**' }),
     ],
-  }
+  },
 ]

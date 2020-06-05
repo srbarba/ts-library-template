@@ -1,16 +1,8 @@
 {
-  "eslint.format.enable": true,
-  "eslint.probe": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "html",
-    "vue",
-    "markdown",
-    "json"
-  ],
+  "editor.formatOnSave": true,
+  "vetur.format.defaultFormatter.html": "prettier",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  }
+  },
+  "jestrunner.configPath": "jest-config.json"
 }

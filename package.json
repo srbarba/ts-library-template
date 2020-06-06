@@ -1,6 +1,6 @@
 {
   "name": "rollup-eslint-babel-ts-jest-library-template",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "author": "Juan Pedro Barba Soler",
   "license": "MIT",
   "main": "dist/index.js",
